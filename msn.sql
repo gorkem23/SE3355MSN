@@ -31,7 +31,7 @@ CREATE TABLE `haberler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Tablo döküm verisi `haberler`
+--
 --
 
 INSERT INTO `haberler` (`id`, `cat_id`, `baslik_tr`, `baslik_en`, `ozet_tr`, `ozet_en`, `aciklama_tr`, `aciklama_en`, `kaynak`, `yazar`, `vitrin`, `resim`, `likes`, `dislikes`, `tarih`) VALUES
