@@ -64,7 +64,6 @@ function &DB($params = '', $query_builder_override = NULL)
 		include($file_path);
 
 		// Make packages contain database config files,
-		// given that the controller instance already exists
 		if (class_exists('CI_Controller', FALSE))
 		{
 			foreach (get_instance()->load->get_package_paths() as $path)
@@ -109,8 +108,6 @@ function &DB($params = '', $query_builder_override = NULL)
 		/**
 		 * Parse the URL from the DSN string
 		 * Database settings can be passed as discreet
-		 * parameters or as a data source name in the first
-		 * parameter. DSNs must have this prototype:
 		 * $dsn = 'driver://username:password@hostname/database';
 		 */
 		if (($dsn = @parse_url($params)) === FALSE)
@@ -151,15 +148,12 @@ function &DB($params = '', $query_builder_override = NULL)
 	}
 
 	// Load the DB classes. Note: Since the query builder class is optional
-	// we need to dynamically create a class that extends proper parent class
-	// based on whether we're using the query builder class or not.
 	if ($query_builder_override !== NULL)
 	{
 		$query_builder = $query_builder_override;
 	}
 	// Backwards compatibility work-around for keeping the
 	// $active_record config variable working. Should be
-	// removed in v3.1
 	elseif ( ! isset($query_builder) && isset($active_record))
 	{
 		$query_builder = $active_record;
