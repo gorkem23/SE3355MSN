@@ -51,7 +51,7 @@ INSERT INTO `haberler` (`id`, `cat_id`, `baslik_tr`, `baslik_en`, `ozet_tr`, `oz
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `haberler_kategori`
+--
 --
 
 CREATE TABLE `haberler_kategori` (
