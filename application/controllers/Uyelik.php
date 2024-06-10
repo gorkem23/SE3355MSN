@@ -17,10 +17,10 @@
     }
 
 	public function cikis() {
-		// Oturumu sonlandır
+		
 		$this->session->unset_userdata('kullanici_id');
 		$this->session->unset_userdata('kullanici_adsoyad');
-		// Çıkış yapıldıktan sonra, kullanıcıyı giriş sayfasına yönlendir
+		
 		redirect($this->session->userdata('site_lang').'/giris');
 	}
 
