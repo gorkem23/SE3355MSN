@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 10 Haz 2024, 12:14:09
--- Sunucu sürümü: 10.4.27-MariaDB
--- PHP Sürümü: 7.4.33
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,15 +10,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Veritabanı: `msn`
---
 
--- --------------------------------------------------------
-
---
--- Tablo için tablo yapısı `haberler`
---
 
 CREATE TABLE `haberler` (
   `id` int(11) NOT NULL,
@@ -76,7 +61,7 @@ CREATE TABLE `haberler_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Tablo döküm verisi `haberler_kategori`
+-- 
 --
 
 INSERT INTO `haberler_kategori` (`id`, `baslik_tr`, `baslik_en`) VALUES
@@ -87,7 +72,7 @@ INSERT INTO `haberler_kategori` (`id`, `baslik_tr`, `baslik_en`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `user_dislikes`
+-- 
 --
 
 CREATE TABLE `user_dislikes` (
@@ -99,7 +84,7 @@ CREATE TABLE `user_dislikes` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `user_likes`
+-- 
 --
 
 CREATE TABLE `user_likes` (
@@ -109,7 +94,7 @@ CREATE TABLE `user_likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Tablo döküm verisi `user_likes`
+-- 
 --
 
 INSERT INTO `user_likes` (`id`, `user_id`, `news_id`) VALUES
@@ -119,7 +104,7 @@ INSERT INTO `user_likes` (`id`, `user_id`, `news_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `uyelik`
+-- 
 --
 
 CREATE TABLE `uyelik` (
@@ -134,7 +119,7 @@ CREATE TABLE `uyelik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Tablo döküm verisi `uyelik`
+-- 
 --
 
 INSERT INTO `uyelik` (`id`, `ad`, `soyad`, `email`, `sifre`, `sifre_tekrar`, `ulke`, `sehir`) VALUES
@@ -142,11 +127,11 @@ INSERT INTO `uyelik` (`id`, `ad`, `soyad`, `email`, `sifre`, `sifre_tekrar`, `ul
 (24, 'gorkem', 'ercan', '19070001040@stu.yasar.edu.tr', '$2y$10$YqqJRR9gUzwpWTAL1TFzHuhAW0klLfe8mqBDq/LW3gK7M63CZR6XW', '', 'Turkey', 'İzmir');
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- 
 --
 
 --
--- Tablo için indeksler `haberler`
+-- 
 --
 ALTER TABLE `haberler`
   ADD PRIMARY KEY (`id`),
@@ -155,61 +140,61 @@ ALTER TABLE `haberler`
   ADD KEY `cat_id` (`cat_id`);
 
 --
--- Tablo için indeksler `haberler_kategori`
+-- 
 --
 ALTER TABLE `haberler_kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `user_dislikes`
+-- 
 --
 ALTER TABLE `user_dislikes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_news` (`user_id`,`news_id`);
 
 --
--- Tablo için indeksler `user_likes`
+-- 
 --
 ALTER TABLE `user_likes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_news` (`user_id`,`news_id`);
 
 --
--- Tablo için indeksler `uyelik`
+-- 
 --
 ALTER TABLE `uyelik`
   ADD PRIMARY KEY (`id`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- 
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `haberler`
+-- 
 --
 ALTER TABLE `haberler`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Tablo için AUTO_INCREMENT değeri `haberler_kategori`
+-- 
 --
 ALTER TABLE `haberler_kategori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Tablo için AUTO_INCREMENT değeri `user_dislikes`
+-- 
 --
 ALTER TABLE `user_dislikes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- Tablo için AUTO_INCREMENT değeri `user_likes`
+-- 
 --
 ALTER TABLE `user_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- Tablo için AUTO_INCREMENT değeri `uyelik`
+-- 
 --
 ALTER TABLE `uyelik`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
