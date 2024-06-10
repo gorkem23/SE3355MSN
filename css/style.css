@@ -1,0 +1,12 @@
+body { background: #d5d4d0; }
+
+.main { background: #f2f2f2; width: 1600px; margin: 0 auto;}
+.card-img-overlay { top: auto; padding-bottom: 8px; }
+
+#carouselExampleIndicators .carousel-caption { text-align: left; right: 0; left: 5%; padding: 0;}
+
+#shoppingCarousel .carousel-caption { background-color: rgba(255, 255, 255, 0.9); color: #000; padding: 5px!important; right: 45%; ;bottom: 5px}
+#shoppingCarousel .carousel-indicators { bottom: -40px; }
+#shoppingCarousel .carousel-indicators li { background: #000; border-top: 1px solid transparent; border-bottom: 1px solid transparent;}
+
+#newsCarousel .carousel-caption { bottom: 0; text-align: left; right: 0; left: 5%; }
