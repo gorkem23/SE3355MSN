@@ -691,7 +691,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 			}
 			elseif ( ! $this->_has_operator($k))
 			{
-				// value appears not to have been set, assign the test to IS NULL
 				$k .= ' IS NULL';
 			}
 			elseif (preg_match('/\s*(!?=|<>|\sIS(?:\s+NOT)?\s)\s*$/i', $k, $match, PREG_OFFSET_CAPTURE))
